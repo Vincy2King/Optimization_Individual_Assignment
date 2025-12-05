@@ -779,7 +779,7 @@ def plot_efficiency_comparison(results: Dict, save_path: str = None) -> None:
 def main() -> None:
     """Main function"""
     # Experimental setup
-    dataset_path = '/data16T_2/wangbingbing/PolyU-Optimization/BSDS500'
+    dataset_path = 'dataset/BSDS500'
     noise_levels = [15, 25, 50]  # Noise levels
     num_images = 5  # Number of images to use
     
@@ -800,18 +800,18 @@ def main() -> None:
     # Plot convergence analysis
     print("\nPlotting convergence analysis...")
     plot_convergence_analysis(results, 
-                             save_path='convergence_analysis.png')
+                             save_path='results/convergence_analysis.png')
     
     # Plot efficiency comparison
     print("\nPlotting efficiency comparison...")
     plot_efficiency_comparison(results, 
-                              save_path='efficiency_comparison.png')
+                              save_path='results/efficiency_comparison.png')
     
     # Plot visual comparison
     print("\nPlotting visual comparison...")
     for sigma in noise_levels:
         plot_visual_comparison(results, sigma=sigma, 
-                             save_path=f'visual_comparison_sigma_{sigma}.png')
+                             save_path=f'results/visual_comparison_sigma_{sigma}.png')
     
     print("\n" + "=" * 80)
     print("Experiment Completed!")
